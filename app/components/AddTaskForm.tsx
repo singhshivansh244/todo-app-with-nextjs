@@ -12,11 +12,15 @@ type ChildProps = {
 export const statusValues = ['Not Completed', 'On Going', 'Completed']
 
 const AddTaskForm: React.FC<ChildProps> = ({ handleAddTask, taskDetail, task }) => {
+  
+  // state variables to get value from form
   const titleRef = useRef<HTMLInputElement>(null);
   const descRef = useRef<HTMLTextAreaElement>(null);
   const statusRef1 = useRef<HTMLInputElement>(null);
   const statusRef2 = useRef<HTMLInputElement>(null);
   const statusRef3 = useRef<HTMLInputElement>(null);
+
+  // function to get all the input values from the form
   const handleFormSubmit = (e: FormEvent) => {
     e.preventDefault();
     handleAddTask();
@@ -60,6 +64,7 @@ const AddTaskForm: React.FC<ChildProps> = ({ handleAddTask, taskDetail, task }) 
     }
   };
 
+  // function to exit from the form
   const handleCancel = () => {
     handleAddTask();
   };
