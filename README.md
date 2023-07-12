@@ -18,7 +18,7 @@ A typed superset of JavaScript that compiles to plain JavaScript for improved co
 Clone the repository:
 git clone https://github.com/singhshivansh244/todo-app-with-nextjs
 ### Navigate to the project directory:
-cd todo-app
+cd todo-app-with-nextjs
 ### Install the dependencies:
 npm install
 ### Usage
