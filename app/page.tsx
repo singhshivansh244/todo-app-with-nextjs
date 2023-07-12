@@ -58,9 +58,9 @@ export default function Home() {
 
   // hook for getting data from local storage
   useEffect(() => {
-    const tasks = JSON.parse(localStorage.getItem("tasks") || 'Hello world!!!');
+    const tasks = localStorage.getItem("tasks");
     if (tasks) {
-      setTasks(tasks);
+      setTasks(JSON.parse(tasks));
     }
   }, []);
 
