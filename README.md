@@ -1,34 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Todo App
+This is a simple Todo App built using Next.js, Tailwind CSS, and TypeScript. It allows users to add, delete, and edit tasks.
 
-## Getting Started
-
-First, run the development server:
-
-```bash
+## Features
+### Add tasks: 
+Users can enter a task description and add it to the list of tasks.
+### Delete tasks: 
+Users can delete a task from the list.
+### Edit tasks: 
+Users can edit the description of an existing task.
+### Technologies Used
+Next.js: A React framework for building server-side rendered and static websites.
+### Tailwind CSS: 
+A highly customizable CSS framework that provides utility classes for rapid UI development.
+### TypeScript: 
+A typed superset of JavaScript that compiles to plain JavaScript for improved code quality and maintainability.
+### Installation
+Clone the repository:
+git clone https://github.com/your-username/todo-app.git
+### Navigate to the project directory:
+cd todo-app
+### Install the dependencies:
+npm install
+### Usage
+### Start the development server:
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open your browser and visit http://localhost:3000 to access the Todo App.
+Contributing
+Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Fork the repository.
+Create a new branch for your feature or bug fix.
+Make the necessary changes and commit your code.
+Push your changes to your forked repository.
+Submit a pull request to the original repository.
+License
+This project is licensed under the MIT License.
