@@ -16,7 +16,7 @@ A highly customizable CSS framework that provides utility classes for rapid UI d
 A typed superset of JavaScript that compiles to plain JavaScript for improved code quality and maintainability.
 ### Installation
 Clone the repository:
-git clone https://github.com/your-username/todo-app.git
+git clone https://github.com/singhshivansh244/todo-app.git
 ### Navigate to the project directory:
 cd todo-app
 ### Install the dependencies:
