@@ -3,27 +3,39 @@ import { useEffect, useState } from "react";
 import AddTaskForm from "./components/AddTaskForm";
 import TaskMenu from "./components/TaskMenu";
 
+// type for task state variable
 export type taskProp = {
   title: string;
   desc?: string;
   status?: string;
   id: string;
 };
+
 export default function Home() {
+  // state variable for disabling input form to user
   const [showTaskForm, setShowTaskForm] = useState<boolean>(false);
+
+  // state variable for storing tasks in array
   const [tasks, setTasks] = useState<taskProp[]>([]);
+
+  // state variable for storing individual task 
   const [editTask, setEditTask] = useState<taskProp>({title: '', id: ''});
 
+  // functino to toggle input form
   const handleAddTask = (task?: taskProp) => {
+    // checking if task is getting edited or new task is adding
     if (task) {
       setEditTask(prev => task);
     } else {
       setEditTask({title: '', id: ''});
     }
+    // toggle function for the form
     setShowTaskForm((prev) => !prev);
   };
 
+  // function to add new task to the array
   const handleTaskDetails = (newTask: taskProp, id?: string) => {
+    // checking if new task is getting added or edit is done
     if (id) {
       const data = tasks.map(task => {
         if (task.id === id) {
@@ -39,10 +51,12 @@ export default function Home() {
     }
   };
 
+  // function to add task
   const handleTasks = (tasks: taskProp[]) => {
     setTasks(tasks);
   }
 
+  // hook for getting data from local storage
   useEffect(() => {
     const tasks = JSON.parse(localStorage.getItem("tasks") || 'Hello world!!!');
     if (tasks) {
@@ -50,6 +64,7 @@ export default function Home() {
     }
   }, []);
 
+  // hook for setting data from local storage
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);

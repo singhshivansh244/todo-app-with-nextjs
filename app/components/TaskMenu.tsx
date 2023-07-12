@@ -1,18 +1,19 @@
 import React from "react";
 import { taskProp } from "../page";
 
+// type for TaskMenu component props
 type childProps = {
   handleTask: (task: taskProp[]) => void;
   tasks: taskProp[];
   showForm: (task: taskProp) => void;
 };
 
+// type for styleStatus and styleTitle
 type StyleStatusProp = {
   [key: string]: string;
 };
 
-const styleColor = ['bg-red-400', 'bg-orange-500', 'bg-yellow-400', 'bg-green-300', 'bg-emerald-400', 'bg-teal-400']
-
+// object for different color for different status badges
 const styleStatus: StyleStatusProp = {
   "Not Completed": "hover:text-red-600",
   "On Going": "hover:text-yellow-600",
@@ -20,6 +21,7 @@ const styleStatus: StyleStatusProp = {
   "none": 'text-black'
 };
 
+// object for different color for different card background
 const styleTitle: StyleStatusProp = {
   "Not Completed": "bg-red-300",
   "On Going": "bg-yellow-300",
@@ -29,21 +31,23 @@ const styleTitle: StyleStatusProp = {
 
 const TaskMenu: React.FC<childProps> = ({ tasks, handleTask, showForm }) => {
 
+  // function to handle deleting task
   const handleDelete = (id: string) => {
     const newTask = tasks.filter((task) => id !== task.id);
     handleTask(newTask);
   }
 
+  // function to handle editing task
   const handleEdit = (task: taskProp) => {
     showForm(task);
   }
 
+  // function to short task according to the status (on going > not comleted > complete)
   const compare = (a: taskProp, b: taskProp) => {
     if (a.status && b.status && a.status > b.status) return -1;
     if (a.status && b.status && a.status < b.status) return 1;
     return 0;
   };
-
   tasks.sort(compare);
 
   return (
